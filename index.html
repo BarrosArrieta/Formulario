@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario GTA V</title>
+    <!-- Enlace a Google Fonts (Poppins) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Enlace al archivo CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Formulario</h2>
+    <label for="gameName">Nombre del Juego:</label>
+    <input type="text" id="gameName" placeholder="Ejemplo: GTA V" value="" required>
+
+    <label for="status">¿Va o no va?</label>
+    <select id="status" required>
+        <option value="si va">Sí va</option>
+        <option value="no va">No va</option>
+    </select>
+
+    <button id="sendButton">Enviar a WhatsApp</button>
+</div>
+
+<!-- Enlace al archivo JavaScript -->
+<script src="app.js"></script>
+
+</body>
+</html>

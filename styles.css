@@ -1,0 +1,87 @@
+/* General */
+body {
+    font-family: 'Poppins', sans-serif; /* Fuente moderna */
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    font-weight: 600;
+}
+
+/* Estilos del contenedor */
+.form-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    max-width: 350px;
+    width: 100%;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-container:hover {
+    transform: translateY(-5px); /* Efecto al pasar el ratón */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Input y select */
+input[type="text"], select {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 15px 0;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    font-size: 16px;
+    transition: border 0.3s ease;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus, select:focus {
+    border-color: #25D366;
+    outline: none;
+}
+
+/* Botón */
+button {
+    background-color: #25D366;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #128C7E;
+    transform: scale(1.05); /* Efecto de crecimiento al pasar el ratón */
+}
+
+button:active {
+    transform: scale(0.98); /* Efecto de clic */
+}
+
+/* Transiciones suaves */
+input, select, button {
+    transition: all 0.3s ease;
+}
+
+/* Diseño adaptable (responsive) */
+@media (max-width: 400px) {
+    .form-container {
+        padding: 20px;
+        max-width: 100%;
+    }
+}
