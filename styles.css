@@ -1,10 +1,21 @@
+/* Variables CSS para colores */
+:root {
+    --color-fondo: #f5f7fa;
+    --color-primario: #25D366;
+    --color-secundario: #128C7E;
+    --color-texto: #333;
+    --color-input-fondo: #f9f9f9;
+    --color-borde: #ddd;
+}
+
 /* General */
 body {
-    font-family: 'Poppins', sans-serif; /* Fuente moderna */
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, var(--color-fondo) 0%, #c3cfe2 100%);
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     height: 100vh;
     margin: 0;
     padding: 0;
@@ -12,76 +23,130 @@ body {
 
 h2 {
     text-align: center;
-    color: #333;
+    color: var(--color-texto);
     font-weight: 600;
+    font-size: 2rem; /* Tamaño dinámico */
 }
 
 /* Estilos del contenedor */
 .form-container {
     background-color: #ffffff;
-    padding: 30px;
+    padding: 2rem; /* Ajustado para ser flexible */
     border-radius: 10px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    max-width: 350px;
+    max-width: 400px; /* Limitar ancho en pantallas grandes */
     width: 100%;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .form-container:hover {
-    transform: translateY(-5px); /* Efecto al pasar el ratón */
+    transform: translateY(-5px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 
 /* Input y select */
 input[type="text"], select {
     width: 100%;
-    padding: 12px 15px;
-    margin: 15px 0;
+    padding: 1rem; /* Ajustado a 1rem para mejor escalabilidad */
+    margin: 1rem 0;
     border-radius: 8px;
-    border: 1px solid #ddd;
-    background-color: #f9f9f9;
-    font-size: 16px;
+    border: 1px solid var(--color-borde);
+    background-color: var(--color-input-fondo);
+    font-size: 1rem; /* Tamaño dinámico */
     transition: border 0.3s ease;
     box-sizing: border-box;
 }
 
 input[type="text"]:focus, select:focus {
-    border-color: #25D366;
+    border-color: var(--color-primario);
     outline: none;
 }
 
 /* Botón */
 button {
-    background-color: #25D366;
+    background-color: var(--color-primario);
     color: white;
     border: none;
     border-radius: 50px;
-    padding: 12px 20px;
-    font-size: 16px;
+    padding: 1rem;
+    font-size: 1rem; /* Ajustado para ser más dinámico */
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
     width: 100%;
 }
 
 button:hover {
-    background-color: #128C7E;
-    transform: scale(1.05); /* Efecto de crecimiento al pasar el ratón */
+    background-color: var(--color-secundario);
+    transform: scale(1.05);
 }
 
 button:active {
-    transform: scale(0.98); /* Efecto de clic */
+    transform: scale(0.98);
 }
 
-/* Transiciones suaves */
-input, select, button {
-    transition: all 0.3s ease;
-}
+/* Diseño adaptable (responsive) para pantallas pequeñas */
+@media (max-width: 576px) {
+    h2 {
+        font-size: 1.5rem; /* Texto más pequeño para pantallas pequeñas */
+    }
 
-/* Diseño adaptable (responsive) */
-@media (max-width: 400px) {
     .form-container {
-        padding: 20px;
+        padding: 1.5rem;
+    }
+
+    input[type="text"], select, button {
+        font-size: 0.9rem; /* Tamaño más pequeño para pantallas pequeñas */
+        padding: 0.75rem;
+    }
+}
+
+/* Diseño adaptable para pantallas medianas (tablets) */
+@media (min-width: 577px) and (max-width: 768px) {
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    .form-container {
+        padding: 1.8rem;
         max-width: 100%;
     }
+
+    input[type="text"], select, button {
+        font-size: 1rem;
+        padding: 0.9rem;
+    }
+}
+
+/* Diseño adaptable para pantallas grandes (desktops) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    h2 {
+        font-size: 2rem;
+    }
+
+    .form-container {
+        max-width: 450px;
+    }
+}
+
+/* Pantallas extra grandes */
+@media (min-width: 1025px) {
+    .form-container {
+        max-width: 500px;
+    }
+}
+
+/* Estilo del botón flotante para reproducir música si es bloqueado */
+button#playButton {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: var(--color-primario);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
 }
